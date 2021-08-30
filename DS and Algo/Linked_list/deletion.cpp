@@ -16,29 +16,54 @@ void InsertBeg(Node** head, int new_data)
     *head = new_node;
 }
 
-void DeleteNode(Node** head, int key)
-{
-    Node* temp = *head;
-    Node* prev = NULL;
+// delete a no. in LL
+// void DeleteNode(Node** head, int key)
+// {
+//     Node* temp = *head;
+//     Node* prev = NULL;
 
-    // if head node has the key(number) to be deleted
-    if (temp != NULL && temp->data == key){
-        *head = temp->next;
-        delete temp;
+//     // if head node has the key(number) to be deleted
+//     if (temp != NULL && temp->data == key){
+//         *head = temp->next;
+//         delete temp;
+//         return;
+//     }
+//     else{
+//         while (temp != NULL && temp->data != key)
+//         {
+//             prev = temp;
+//             temp = temp->next;
+//         }
+//         if (temp == NULL)
+//             return;
+//         prev->next = temp->next;
+//         delete temp;
+//     }
+
+// }
+
+// Delete a no at given position
+void DeleteNode(Node** head, int pos)
+{
+    if (*head==NULL){
         return;
     }
-    else{
-        while (temp != NULL && temp->data != key)
-        {
-            prev = temp;
-            temp = temp->next;
-        }
-        if (temp == NULL)
-            return;
-        prev->next = temp->next;
-        delete temp;
+    Node* temp = *head;
+    if (pos == 0){
+        *head = temp->next;
+        free(temp);
+        return;
     }
 
+    for (int i=0; temp != NULL && i<pos-1; i++){
+        temp = temp->next;
+    }
+
+    if (temp==NULL || temp->next == NULL)
+        return;
+    Node* next = temp->next->next;
+    free(temp->next);
+    temp->next = next;
 }
 
 void PrintList(Node* n)
@@ -60,7 +85,7 @@ int main()
 
     cout << "Created linked list is: " <<endl;
     PrintList(head);
-    DeleteNode(&head, 1);
+    DeleteNode(&head, 2);
     cout << endl;
     cout << "Linked List after Deletion of 1: " << endl;
     PrintList(head);
