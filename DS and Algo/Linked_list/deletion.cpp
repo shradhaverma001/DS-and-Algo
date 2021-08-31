@@ -75,6 +75,17 @@ void PrintList(Node* n)
     }
 }
 
+void listLen(Node* head)
+{
+    int count=0;
+    Node* current = head;
+    while(current!=NULL){
+        count++;
+        current = current->next;
+    }
+    cout << count;
+}
+
 int main()
 {
     Node* head = NULL;
@@ -89,5 +100,8 @@ int main()
     cout << endl;
     cout << "Linked List after Deletion of 1: " << endl;
     PrintList(head);
+    cout << endl;
+    cout << "Length of Linked List is:" << endl;
+    listLen(head);
     return 0;
 }
