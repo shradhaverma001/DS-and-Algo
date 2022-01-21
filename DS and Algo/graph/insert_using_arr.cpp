@@ -9,6 +9,8 @@ int a[5][5];
 // 4 1
 // 1 3
 //n-nodes   m-edges
+
+//not properly implemented is giving wrong answer
 int main()
 {
     int n,m,x,y;

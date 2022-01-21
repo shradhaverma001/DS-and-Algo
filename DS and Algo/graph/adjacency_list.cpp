@@ -17,6 +17,7 @@ int main()
     for(int i=1; i<m; i++){
         cin >> x >>y;
         v[x].push_back(y);
+        
         //undirected
         //v[y].push_back(x);
     }
