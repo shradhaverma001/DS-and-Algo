@@ -18,7 +18,8 @@ int main()
 {
     int n,m,x,y;
     cin >> n >>m;
-    for(int i=1; i<m; i++){
+    cout << "Enter the edges:" << endl;
+    for(int i=0; i<m; i++){
         cin >> x >>y;
         v[x].push_back(y);
         
