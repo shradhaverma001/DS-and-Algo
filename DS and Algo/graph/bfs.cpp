@@ -18,7 +18,7 @@ int main()
 {
     int n,m,x,y;
     cin >> n >>m;
-    for(int i=1; i<=n; i++){
+    for(int i=1; i<=n; i++){                //i=0 to i<m
         cin >> x >>y;
         v[x].push_back(y);
         
@@ -27,7 +27,7 @@ int main()
     }
     //0 is source
     //bfs(0);
-    //if aource is a node which is not connected 
+    //if source is a node which is not connected 
     for(int i =0; i<n; i++){
         if(visited[i] == 0)
             bfs(i);

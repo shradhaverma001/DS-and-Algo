@@ -28,7 +28,7 @@ int main()
     }
     //0 is source
     //bfs(0);
-    //if aource is a node which is not connected 
+    //if source is a node which is not connected 
     for(int i =0; i<n; i++){
         if(visited[i] == 0)
             dfs(i);
